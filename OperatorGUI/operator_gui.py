@@ -64,16 +64,19 @@ class UiMainWindow(TaurusMainWindow):
         taurus_line_edit.setModel(name + "/Position")
         layout.addWidget(taurus_line_edit, 2, 2)
 
-        limit_switches_label = QtGui.QLabel(widget)
-        limit_switches_label.setText('Limit switches:')
-        layout.addWidget(limit_switches_label, 0, 3, 1, 2)
+        # limit_switches_label = QtGui.QLabel(widget)
+        # limit_switches_label.setText('Limit switches:')
+        # layout.addWidget(limit_switches_label, 0, 3, 1, 2)
+        #
+        # lower_limit_switch = TaurusLed(widget)
+        # lower_limit_switch.setModel(name + 'Limit_switches')
+        # lower_limit_switch.setModelIndex('1')
+        # lower_limit_switch.setMinimumSize(QtCore.QSize(30, 30))
+        # lower_limit_switch.setMaximumSize(QtCore.QSize(50, 50))
+        # layout.addWidget(lower_limit_switch, 1, 3)
 
-        lower_limit_switch = TaurusLed(widget)
-        lower_limit_switch.setModel(name + 'Limit_switches')
-        lower_limit_switch.setModelIndex('1')
-        lower_limit_switch.setMinimumSize(QtCore.QSize(30, 30))
-        lower_limit_switch.setMaximumSize(QtCore.QSize(50, 50))
-        layout.addWidget(lower_limit_switch, 1, 3)
+        layout.setColumnStretch(0, 1)
+        layout.setColumnStretch(1, 1)
 
         widget.setLayout(layout)
 
@@ -101,6 +104,7 @@ def main():
                    'motor/motctrl01/3',
                    'motor/motctrl01/4']
     main_window = UiMainWindow(motors_list)
+    main_window.setWindowTitle('OperatorGUI')
     main_window.show()
     sys.exit(app.exec_())
 
