@@ -19,13 +19,13 @@ class UiMainWindow(TaurusMainWindow):
         self.gridLayout.setMargin(0)
 
         self.motor_widgets_list = []
-        self.motor_widgets_layout = QtGui.QVBoxLayout(self.central_widget)
+        self.motor_widgets_layout = QtGui.QGridLayout(self.central_widget)
         self.motors_widget = QtGui.QWidget(self.central_widget)
         self.motors_widget.setLayout(self.motor_widgets_layout)
         self.gridLayout.addWidget(self.motors_widget, 0, 0)
-        for motor in motors_list:
+        for i, motor in enumerate(motors_list):
             widget = self.get_one_motor_widget(motor)
-            self.motor_widgets_layout.addWidget(widget)
+            self.motor_widgets_layout.addWidget(widget, i / 2, i % 2)
             self.motor_widgets_list.append(widget)
 
         self.setCentralWidget(self.central_widget)
@@ -54,21 +54,15 @@ class UiMainWindow(TaurusMainWindow):
         layout.addWidget(taurus_label, 1, 0, 2, 2)
 
         taurus_mano = EditableManoMeter(widget)
-        taurus_mano.setMaximumSize(QtCore.QSize(200, 200))
-        #:TODO: Get limits for mano.
+        taurus_mano.setMaximumSize(QtCore.QSize(500, 500))
         l_lim, u_lim = self.get_limits(name + '/Position')
-        print name, '\nLOWER LIMITS:', l_lim
-        print 'UPPER LIMITS:', u_lim
         taurus_mano.setProperScales(l_lim, u_lim)
+        taurus_mano.setModel(name + '/Position')
         layout.addWidget(taurus_mano, 0, 2, 2, 1)
 
         taurus_line_edit = TaurusValueLineEdit(widget)
         taurus_line_edit.setModel(name + "/Position")
         layout.addWidget(taurus_line_edit, 2, 2)
-
-        position_label = TaurusLabel(widget)
-        position_label.setModel(name + "/Position")
-        position_label.hide()
 
         limit_switches_label = QtGui.QLabel(widget)
         limit_switches_label.setText('Limit switches:')
