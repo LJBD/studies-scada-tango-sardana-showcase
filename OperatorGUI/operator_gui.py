@@ -1,12 +1,12 @@
 from PyQt4 import QtCore, QtGui
-
 import sys
-
+from PyTango import AttributeProxy
 from taurus.qt.qtgui.container import TaurusMainWindow
 from taurus.qt.qtgui.display import TaurusLabel, TaurusLed
-from taurus.qt.qtgui.gauge import QManoMeter
 from taurus.qt.qtgui.application import TaurusApplication
 from taurus.qt.qtgui.input import TaurusValueLineEdit
+
+from editable_mano_meter import EditableManoMeter
 
 
 class UiMainWindow(TaurusMainWindow):
@@ -53,25 +53,51 @@ class UiMainWindow(TaurusMainWindow):
         taurus_label.setMinimumSize(QtCore.QSize(260, 140))
         layout.addWidget(taurus_label, 1, 0, 2, 2)
 
-        taurus_mano = QManoMeter(widget)
+        taurus_mano = EditableManoMeter(widget)
         taurus_mano.setMaximumSize(QtCore.QSize(200, 200))
         #:TODO: Get limits for mano.
+        l_lim, u_lim = self.get_limits(name + '/Position')
+        print name, '\nLOWER LIMITS:', l_lim
+        print 'UPPER LIMITS:', u_lim
         layout.addWidget(taurus_mano, 0, 2, 2, 1)
 
         taurus_line_edit = TaurusValueLineEdit(widget)
         taurus_line_edit.setModel(name + "/Position")
         layout.addWidget(taurus_line_edit, 2, 2)
 
+        position_label = TaurusLabel(widget)
+        position_label.setModel(name + "/Position")
+        position_label.hide()
+
         limit_switches_label = QtGui.QLabel(widget)
         limit_switches_label.setText('Limit switches:')
         layout.addWidget(limit_switches_label, 0, 3, 1, 2)
 
         lower_limit_switch = TaurusLed(widget)
-        lower_limit_switch.setModel(name + 'Limit')
+        lower_limit_switch.setModel(name + 'Limit_switches')
+        lower_limit_switch.setModelIndex('1')
+        lower_limit_switch.setMinimumSize(QtCore.QSize(30, 30))
+        lower_limit_switch.setMaximumSize(QtCore.QSize(50, 50))
+        layout.addWidget(lower_limit_switch, 1, 3)
 
         widget.setLayout(layout)
 
         return widget
+
+    @staticmethod
+    def get_limits(attrib_name):
+        attr_proxy = AttributeProxy(attrib_name)
+        attr_config = attr_proxy.get_config()
+        lower_limit = attr_config.min_value
+        upper_limit = attr_config.max_value
+        lower_warning = attr_config.alarms.min_warning
+        upper_warning = attr_config.alarms.max_warning
+        lower_alarm = attr_config.alarms.min_alarm
+        upper_alarm = attr_config.alarms.max_alarm
+        return [lower_limit, lower_alarm, lower_warning], [upper_limit,
+                                                           upper_alarm,
+                                                           upper_warning]
+
 
 def main():
     app = TaurusApplication()
