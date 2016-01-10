@@ -59,6 +59,7 @@ class UiMainWindow(TaurusMainWindow):
         l_lim, u_lim = self.get_limits(name + '/Position')
         print name, '\nLOWER LIMITS:', l_lim
         print 'UPPER LIMITS:', u_lim
+        taurus_mano.setProperScales(l_lim, u_lim)
         layout.addWidget(taurus_mano, 0, 2, 2, 1)
 
         taurus_line_edit = TaurusValueLineEdit(widget)
