@@ -1,0 +1,34 @@
+<sequence>
+  <macro name="mv">
+    <paramrepeat name="motor_pos_list">
+      <repeat nr="1">
+        <param name="motor" value="gap01"/>
+        <param name="pos" value="10.0"/>
+      </repeat>
+    </paramrepeat>
+  </macro>
+  <macro name="mv">
+    <paramrepeat name="motor_pos_list">
+      <repeat nr="1">
+        <param name="motor" value="offset01"/>
+        <param name="pos" value="23.0"/>
+      </repeat>
+    </paramrepeat>
+  </macro>
+  <macro name="mv">
+    <paramrepeat name="motor_pos_list">
+      <repeat nr="1">
+        <param name="motor" value="mot03"/>
+        <param name="pos" value="20.0"/>
+      </repeat>
+    </paramrepeat>
+  </macro>
+  <macro name="mvr">
+    <paramrepeat name="motor_disp_list">
+      <repeat nr="1">
+        <param name="motor" value="mot04"/>
+        <param name="disp" value="10.0"/>
+      </repeat>
+    </paramrepeat>
+  </macro>
+</sequence>

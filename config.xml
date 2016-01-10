@@ -1,0 +1,21 @@
+<taurusgui_config>
+  <GUI_NAME>MotorsForLatocha</GUI_NAME>
+  <ORGANIZATION>SOLEIL</ORGANIZATION>
+  <CUSTOM_LOGO/>
+  <MACROSERVER_NAME>MacroServer/tangobox/1</MACROSERVER_NAME>
+  <DOOR_NAME>Door/tangobox/1</DOOR_NAME>
+  <INSTRUMENTS_FROM_POOL>True</INSTRUMENTS_FROM_POOL>
+  <PanelDescriptions>
+    <PanelDescription>
+  <name>Positions</name>
+  <classname>TaurusTrend</classname>
+  <modulename/>
+  <widgetname/>
+  <floating>True</floating>
+  <sharedDataWrite/>
+  <sharedDataRead/>
+  <model>tango://tango9-vm:10000/sim/motor/1, tango://tango9-vm:10000/sim/motor/2, tango://tango9-vm:10000/sim/motor/3</model>
+</PanelDescription>
+  </PanelDescriptions>
+  <MONITOR>tango://tango9-vm:10000/sim/motor/1,tango://tango9-vm:10000/sim/motor/2,tango://tango9-vm:10000/sim/motor/3</MONITOR>
+</taurusgui_config>
