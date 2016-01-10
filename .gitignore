@@ -58,3 +58,10 @@ target/
 
 # PyCharm Project files
 */.idea/
+
+# LaTeX compilation outputs
+*/*.aux
+*/*.toc
+*/*.out
+*/*.log
+*/*.synctex.gz
