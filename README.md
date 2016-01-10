@@ -3,6 +3,7 @@ This repository contains a project for my studies showcasing Sardana's simulatio
 
 It's meant to be run on TangoBox with Tango 9 where you have a Sardana demo. It uses the same motors.
 Contents:
+
 	- TaurusGUI config files and a running script for an Expert's GUI.
 
 	- code of an Operator's GUI
