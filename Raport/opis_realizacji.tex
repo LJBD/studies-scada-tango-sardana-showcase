@@ -6,7 +6,52 @@
 
 \subsection{Konfiguracja wirtualnego środowiska}
 \label{sub:konfiguracja}
-\quad Pierwszym elementem, który należało opanować było uruchomienie wirtualnej maszyny ,,TangoBox9'', a następnie dokonanie konfiguracji wszystkich elementów niezbędnych do realizacji postawionego celu.
+\quad Pierwszym elementem, który należało opanować było uruchomienie wirtualnej maszyny ,,TangoBox9'', a następnie konfiguracja wszystkich elementów niezbędnych do realizacji postawionego celu. Kolejne kroki postępowania zostały przedstawione poniżej:
+
+\begin{enumerate}
+	\item Sprawdzenie funkcjonowania systemu Tango: głównej bazy danych, poszczególnych ,,serwerów urządzeń'' (ang. device servers) oraz samych urządzeń. W tym celu użyto dwóch aplikacji stanowiących pakiet do zarządzania systemem Tango: Astor i Jive. Weryfikacja poprawności polegała na uruchomieniu obu aplikacji i wizualnym sprawdzeniu stanów interesujących z punktu widzenia projektu komponentów systemu.
+	\item Sprawdzenie funkcjonowania dodatków do systemu Tango: archiwizacji, bibliotek Taurus i Sardana. Należało uruchomić odpowiednie aplikacje (,,jhdbconfigurator'' w przypadku archiwizacji, ,,taurusgui'' - Taurusa i ,,Sardemo'' - Sardany) i sprawdzić, czy nie wyrzucają jakiś błędów.
+	\item Uruchomienie serwerów urządzeń zarządzających silnikami. Klasa ,,Motors'' jest częścią oprogramowania ,,Pool'', które należy do pakietu Sardana. Program Astor umożliwia włączenie serwera.
+	\item Konfiguracja silników. Zostały ustawione następujące elementy:
+	\begin{enumerate}
+		\item urządzenie ,,motor/motctrl01/1'':
+		\begin{enumerate}
+			\item zakres wartości położenia: -120, 120,
+			\item progi alarmowe: -110, 110,
+			\item progi ostrzeżeń: -100, 100,
+			\item pozycje czujników krańcowych - takie, jak zakresy wartości położenia,
+			\item prędkość: 10,
+			\item przyspieszenie: 0,5.
+		\end{enumerate}
+		\item urządzenie ,,motor/motctrl01/2'':
+		\begin{enumerate}
+			\item zakres wartości położenia: -120, 120,
+			\item progi alarmowe: -110, 110,
+			\item progi ostrzeżeń: -100, 100,
+			\item pozycje czujników krańcowych - takie, jak zakresy wartości położenia,
+			\item prędkość: 100,
+			\item przyspieszenie: 40.
+		\end{enumerate}
+		\item urządzenie ,,motor/motctrl01/3'':
+		\begin{enumerate}
+			\item zakres wartości położenia: -50, 50,
+			\item progi alarmowe: -45, 45,
+			\item progi ostrzeżeń: -40, 40,
+			\item pozycje czujników krańcowych - takie, jak zakresy wartości położenia,
+			\item prędkość: 10,
+			\item przyspieszenie: 0,1.
+		\end{enumerate}
+		\item urządzenie ,,motor/motctrl01/4'':
+		\begin{enumerate}
+			\item zakres wartości położenia: -90, 140,
+			\item progi alarmowe: -85, 130,
+			\item progi ostrzeżeń: -80, 125,
+			\item pozycje czujników krańcowych - takie, jak zakresy wartości położenia,
+			\item prędkość: 100,
+			\item przyspieszenie: 1.
+		\end{enumerate}
+	\end{enumerate}
+\end{enumerate}
 
 \subsection{Opracowanie aplikacji eksperckiej i operatorskiej}
 
