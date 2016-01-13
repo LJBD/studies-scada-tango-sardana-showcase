@@ -2,7 +2,7 @@
 \section{Opis realizacji}
 \label{sec:opis_realizacji}
 
-\quad Realizacja zadań projektowych opisanych w rozdziale \ref{sec:koncepcja} została przeprowadzona przy użyciu wszystkich technologii, które są wymienione w rozdziałach \ref{sec:spec_sprzet} i \ref{sec:spec_prog}. Można ją podzielić na trzy główne części, które zostaną przedstawione w kolejnych podrozdziałach.
+\quad Realizacja zadań projektowych opisanych w rozdziale \ref{sec:koncepcja} została przeprowadzona przy użyciu wszystkich technologii, które są wymienione w rozdziale \ref{sec:spec_prog}. Można ją podzielić na trzy główne części, które zostaną przedstawione w kolejnych podrozdziałach.
 
 \subsection{Konfiguracja wirtualnego środowiska}
 \label{sub:konfiguracja}
@@ -77,7 +77,7 @@ Pierwszy sposób to podejście konfiguracyjne. Użytkownik nie musi pisać kodu 
 
 Kolejnym krokiem była konfiguracja panelu z wykresem oraz zapisanie ustawień, które zawierały między innymi: odpowiednie sygnały, ich nazwy, kolory na wykresie i skalę. Ostatnią czynnością było utworzenie i zapisanie przykładowej sekwencji makr. Oba wspomniane wyżej pliki konfiguracyjne zostały dołączone do plików projektowych i są opisane w rozdziale \ref{sec:opis_kodu}.
 
-Drugi możliwy sposób tworzenia interfejsów użytkownika przy pomocy pakietu Taurus to podejście programistyczne. Najpierw stworzono szkielet wyglądu aplikacji przy pomocy programu QtDesigner. 
+Drugi możliwy sposób tworzenia interfejsów użytkownika przy pomocy pakietu Taurus to podejście programistyczne. Najpierw stworzono szkielet wyglądu aplikacji przy pomocy programu QtDesigner. Wygenerowany plik z rozszerzeniem .ui (z ang. user interface - interfejs użytkownika) można albo bezpośrednio zaimportować do aplikacji w Pythonie, albo skonwertować na kod w tym języku. Wybrany został drugi sposób postępowania, jako że importowany plik .ui nie zawierał wszystkich potrzebnych elementów. Przede wszystkim, stworzenia wymagał drugi sposób wizualizacji, czyli klasa realizująca wyświetlanie w czasie rzeczywistym wartości położenia silników. Pisanie kodu i testowanie prototypów aplikacji w znaczącym stopniu ułatwiło korzystanie z zaawansowanego środowiska programistycznego, jakim jest PyCharm.
 
 Dokładny opis obu aplikacji znajduje się w rozdziale \ref{sec:manual}.
 
