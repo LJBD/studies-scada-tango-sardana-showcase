@@ -3,10 +3,27 @@
 \label{sec:spec_prog}
 
 \begin{enumerate}
-	\item Tango
+	\item \textbf{Tango}
+	
+	\hspace{2em}System sterowania TANGO jest darmowym zestawem narzędzi do sterowania dowolnego rodzaju sprzętem lub oprogramowaniem oraz do budowy systemów SCADA (ang. Supervisory Control And Data Acquisition). Jest to oprogramowanie typu open-source wykorzystywane do sterowania synchrotronami, laserami oraz innymi eksperymentami fizycznymi. TANGO jest aktywnie rozwijane przez TANGO Consortium.
+	
+	\hspace{2em}TANGO jest rozproszonym systemem sterowania. Oznacza to, że może działać zarówno na jednej maszynie, jak i na wielu. Wykorzystuje dwa protokoły sieciowe - COBRA oraz Zeromq. Podstawowym modelem komunikacji jest model klient-serwer. Komunikacja pomiędzy klientem i serwerem może być synchroniczna, asynchroniczna (COBRA) oraz sterowana zdarzeniem (Zeromq) \cite{TangoWiki}.
+	
+	\hspace{2em}System TANGO jest opakowaniem (ang. wrapper) dla protokołu COBRA zapewniającym przyjazne dla użytkownika API. Dzięki takiemu podejsciu wiele detali związanych z nawiązywaniem i utrzymywaniem połączenia pomiędzy urządzeniami jest niewidoczna dla użytkownia, co pozwala na szybsze i łatwiejsze rozbudowywanie systemu sterowania.
+	
+	\hspace{2em}TANGO wykorzystuje MySQL jako bazę danych do trzymania informacji. Informacjami takimi mogą byc np. nazwy urządzeń, adresy sieciowe, listy urządzeń itp. MySQL jest relacyjną bazą danych implementującą podzbiór SQLa. System TANGO jest wspierany przez 4 platformy: Linux, Windows NT, Solaris oraz HP-UX.
+	
 	\begin{enumerate}
-		\item Taurus
-		\item Sardana
+		\item \textbf{Taurus}
+		
+		\hspace{2em}Taurus jest platformą programistyczną dla Pythona służącą do sterowania oraz akwizycji danych w zastosowaniach naukowych oraz przemysłowych. Pozwala na szybkie i proste tworzenie interfejsów użytkownika. Jest to częśc pakietu programistycznego Sardana, opisanego w poprzednim podrozdziale. Taurus posiada bogatą bibliotekę dzięki czemu stworzone GUI (ang. Graphical User Interface)  może zawierać wiele różnych komponentów takich jak wykresy, tabele, przyciski itp. Celem biblioteki Taurus jest zapewnienie przyjaznego API dla użytkownika oraz przyspieszenie procesu rozwijania aplikacji bazowanych na TANGO.
+				
+		
+		\item \textbf{Sardana}
+		
+		\hspace{2em}Sardana to pakiet oprogramowania do nadzoru, kontroli i akwizycja danych w zastosowaniach naukowych. Jej celem jest zredukowanie kosztów oraz czasu potrzebnych do projektowania, rozwijania oraz utrzymywania systemów SCADA. Rozwój Sardany zapoczątkowany został przy synchrotronie ALBA, a dzisiaj jest wspierany przez wiekszą społeczność,  w skład której wchodzą liczne laboratoria oraz inne jednostki (ALBA, DESY, MaxIV, Solaris, ESRF).
+		Sardana jest bazowana na systemie TANGO i wykorzystuje bibliotekę Taurus umożliwiającą programowanie i konfigurację interfejsu użytkownika \cite{Sardana}.
+		
 		\item Jive
 		\item TangoBox9 (maszyna wirtualna)
 	\end{enumerate}
