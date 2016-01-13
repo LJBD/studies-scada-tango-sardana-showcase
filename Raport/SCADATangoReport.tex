@@ -49,8 +49,8 @@
 \renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
 
 \usepackage{titlesec} % Allows customization of titles
-%\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
-%\renewcommand\thesubsection{\Roman{subsection}} % Roman numerals for subsections
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\Roman{subsection}} % Roman numerals for subsections
 \titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
 \titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
 
@@ -68,11 +68,6 @@
 \usepackage{adjustbox} %MINE: handles rotated images (like the screenshots of GUIs)
 \usepackage{titletoc} %MINE: adding spacing in table of contents
 
-%\titlecontents{section}[1.5em]
-%{}
-%{\contentslabel{2em}}%change the argument to obtain thedesired spacing
-%{\hspace*{-2.3em}}
-%{\titlerule*[1pc]{.}\contentspage}
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
@@ -129,7 +124,7 @@
 
 \input{koncepcja_realizacji}
 
-\input{specyfikacja_sprzetu}
+%\input{specyfikacja_sprzetu}
 
 \input{specyfikacja_programow}
 
