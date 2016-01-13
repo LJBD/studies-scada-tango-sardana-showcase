@@ -49,14 +49,13 @@
 \renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
 
 \usepackage{titlesec} % Allows customization of titles
-\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
-\renewcommand\thesubsection{\Roman{subsection}} % Roman numerals for subsections
+%\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+%\renewcommand\thesubsection{\Roman{subsection}} % Roman numerals for subsections
 \titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
 \titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
 
 \usepackage{graphicx} % Required for including images
 \graphicspath{{Grafika/}} % Set the default folder for images
-\usepackage{adjustbox}
 
 \usepackage{fancyhdr} % Headers and footers
 \pagestyle{fancy} % All pages have headers and footers
@@ -66,6 +65,14 @@
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
 \usepackage[nottoc,numbib]{tocbibind}
+\usepackage{adjustbox} %MINE: handles rotated images (like the screenshots of GUIs)
+\usepackage{titletoc} %MINE: adding spacing in table of contents
+
+%\titlecontents{section}[1.5em]
+%{}
+%{\contentslabel{2em}}%change the argument to obtain thedesired spacing
+%{\hspace*{-2.3em}}
+%{\titlerule*[1pc]{.}\contentspage}
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
@@ -99,7 +106,6 @@
 \clearpage
 
 
-%\tableofcontents
 %----------------------------------------------------------------------------------------
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
@@ -118,8 +124,6 @@
 %----------------------------------------------------------------------------------------
 %	ARTICLE CONTENTS
 %----------------------------------------------------------------------------------------
-
-%\begin{multicols}{2} % Two-column layout throughout the main article text
 
 \input{podstawa_teoretyczna}
 
@@ -140,7 +144,5 @@
 %----------------------------------------------------------------------------------------
 
 \input{literatura}
-
-%\end{multicols}
 
 \end{document}
