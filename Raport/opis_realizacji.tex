@@ -56,7 +56,7 @@
 	
 	\item Następnie dokonano sprawdzenia działania urządzeń nadrzędnych nad zwykłymi silnikami - tzw. ,,pseudo-silników'' (ang. PseudoMotors). System Tango wspiera hierarchiczność urządzeń, a więc synchronizację pracy poszczególnych silników najprościej jest zrealizować właśnie w takiej formie. Użyto domyślnych ustawień, obecnych w symulacji środowiska linii pomiarowej, jakie jest dostarczone z pakietem Sardana.
 	
-	Skonfigurowano dwa pseudo-silniki: ,,slit'' i ,,gap''. Oba synchronizują pracę pierwszych dwóch silników. Pierwszy może być interpretowany jako ustawienie wielkości szczeliny, przez którą pada światło, a drugi służy do realizowania przesunięcia między dwoma symetrycznymi elementami, którymi te silniki poruszają.
+	Skonfigurowano dwa pseudo-silniki: ,,gap'' i ,,offset''. Oba synchronizują pracę pierwszych dwóch silników. Pierwszy może być interpretowany jako ustawienie wielkości szczeliny, przez którą pada światło, a drugi służy do realizowania przesunięcia między dwoma symetrycznymi elementami, którymi te silniki poruszają.
 \end{enumerate}
 
 \begin{figure}[ht]
@@ -88,3 +88,5 @@ Dokładny opis obu aplikacji znajduje się w rozdziale \ref{sec:manual}.
 \quad Procesowi testowania został poddany każdy fragment wymienionej w poprzednich dwóch podrozdziałach konfiguracji. Korzystając ze stworzonych aplikacji jako punktów wejścia do systemu, poddano próbie ustawienia silników oraz same aplikacje. Sprawdzono poprawność konfiguracji archiwizacji (co jest widoczne na rysunku \ref{fig:Archiving}).
 
 Na wykresach można zauważyć wpływ różnych ustawień prędkości i przyspieszeń poszczególnych silników na ogólne funkcjonowanie całego ich zbioru - przede wszystkim jest to odczuwalne w przypadku poruszania pierwszymi dwoma silnikami za pomocą pseudo-motorów.
+
+Funkcjonalność synchronizacji ruchu została zapewniona przez zastosowanie tych właśnie nadrzędnych pseudo-silników. Co warte zaznaczenia, mimo różnic w prędkościach i przyspieszeniach między silnikami pierwszym i drugim (połączonymi przez owe nadrzędne urządzenia), ich położenia zmieniają się według takich samych krzywych.
