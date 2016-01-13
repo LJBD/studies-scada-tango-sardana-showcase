@@ -1,3 +1,20 @@
 \clearpage
 \section{Koncepcja realizacji}
 \label{sec:koncepcja}
+
+\quad Postawiony w temacie projektu problem jest dwojakiej natury. Po pierwsze, należy zdefiniować system sterowania linii badawczej w synchrotronie, określić w nim rolę silników i zaproponować programowe sposoby wizualizacji ich pracy. Po drugie, jak było wspomniane w początkowym opisie projektu, trzeba zastanowić się nad możliwościami synchronizacji pracy poszczególnych osi takich silników krokowych, które, jak było wspomniane w rozdziale \ref{sec:podstawa}, ruszają wieloma elementami na liniach badawczych.
+
+Należy również uwzględnić fakt, iż w normalnym środowisku pracy przy linii badawczej w czasie jej pracy mogą nią sterować dwie osoby. Jedna z nich to operator - klient synchrotronu, który przychodzi zrealizować pewne badania na danej linii. Drugą osobą jest ekspert ze strony synchrotronu - nie ma on obowiązku posiadania pełnej znajomości fizyki stojącej za funkcjonowaniem linii, ale powinien dobrze znać jej system sterowania, ponieważ może on mieć wpływ na serce synchrotronu, czyli pierścień akumulacyjny.
+
+Dodatkowo, co jest dość oczywiste, przy tworzeniu projektu autorzy nie mieli dostępu do prawdziwej linii badawczej. W związku z tym wykorzystano środowisko symulacyjne, które jest dostarczane razem z narzędziami do zarządzania nim. Umożliwiło to dokładną konfigurację oraz testowanie różnych zestawów parametrów.
+
+Na podstawie wyżej wymienionych zagadnień sformułowane zostały wymagania stawiane przed projektem:
+
+\begin{enumerate}
+	\item Należy skonfigurować różne urządzenia symulujące pracę rzeczywistych silników z uwzględnieniem takich parametrów, jak prędkość, przyspieszenie lub położenie czujników krańcowych. Liczba takich symulacyjnych napędów powinna wynosić minimum 3.
+	\item Należy znaleźć sposób synchronizacji przynajmniej dwóch z tych silników. Przez synchronizację rozumie się wykonywanie zaplanowanego ruchu w jednostajny sposób i w jednym czasie. Bez względu na środowisko symulacyjne, zaleca się zastosowanie rozwiązania czysto programowe. Jest to związane z faktem, iż używany zestaw narzędzi do zarządzania systemem sterowania jest obiektowy, co pozwala na hierarchiczność urządzeń. W ten sposób można tworzyć urządzenia nadrzędne, które będą kontrolować rzeczywiste napędy.
+	\item Należy zaproponować dwa odrębne sposoby wizualizacji danych eksperymentalnych, czyli w tym przypadku pozycji symulowanych silników.
+	\item Należy przygotować dwie aplikacje: dla eksperta i zwykłego użytkownika. Pierwsza powinna dawać pełną kontrolę nad wszystkimi parametrami, za wyjątkiem stałych parametrów rzeczywistych silników (takich jak prędkość czy przyspieszenie). Druga powinna umożliwiać tylko podgląd stanów poszczególnych silników oraz wprowadzanie drobnych korekt w ich pozycjach.
+\end{enumerate}
+
+Taki zestaw założeń projektowych został przyjęty w czasie jego realizacji.
