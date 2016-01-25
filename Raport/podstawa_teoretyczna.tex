@@ -42,4 +42,13 @@
 	
 	\hspace{2em}Systemy te dają możliwość współpracy ze sterownikami PLC, regulatorami mikroprocesorowymi i innymi urządzeniami. Pozwalają na realizację zdecentralizowanych systemów automatyki przemysłowej. Systemy SCADA pozwalają na uzyskanie szybkiego wglądu w faktyczny stan urządzeń produkcyjnych i wykonawczych. Są one doskonałym sposobem nie tylko na zamianę języka maszyn na język ludzi, ale także umożliwiają szybką lokalizację alarmów, podstawowe logowanie danych czy też automatyczną reakcję na określone sygnały pochodzące z urządzeń. System SCADA w warstwie graficznej odpowiada za jednoznaczne zaprezentowanie dynamicznie zmieniającej się informacji. Jednocześnie zdefiniowane przez użytkownika algorytmy logiczne przyspieszają i wspomagają operatora w jego pracy. System SCADA jest także podstawowym źródłem danych dla systemów nadrzędnych i przemysłowych baz danych.
 	
+	\hspace{2em}Elementy składowe systemu SCADA wykorzystywanego przy realizacji opisywanego projektu są pokazane na rys. \ref{fig:sardana-outline}. W szczególności należy tutaj zwrócić uwagę na obecność komponentów służących do programowania aplikacji klienckich oraz (Taurus, TaurusGUI) oraz tych, które są wykorzystywane przy konfiguracji istniejących urządzeń (Macro Server, Device Pool). Wszystkie pakiety wymienione na dole rysunku dotyczą komunikacji z urządzeniami - są to różne typy oprogramowania dedykowanego do sterowania rozproszonymi systemami sterowania.
+	
+	\begin{figure}[pth]
+		\centering
+		\includegraphics[width=1\linewidth]{Grafika/sardana_sketch}
+		\caption{Schemat ideowy elementów składowych oprogramowania Sardana. Źródło: \cite{Sardana}.}
+		\label{fig:sardana-outline}
+	\end{figure}
+	
 

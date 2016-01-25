@@ -15,7 +15,14 @@ To, o czym jednak należy tutaj wspomnieć, to używane zwykle w synchrotronach 
 	
 	\hspace{2em}System sterowania TANGO jest darmowym zestawem narzędzi do sterowania dowolnego rodzaju sprzętem lub oprogramowaniem oraz do budowy systemów SCADA (ang. Supervisory Control And Data Acquisition). Jest to oprogramowanie typu open-source wykorzystywane do sterowania synchrotronami, laserami oraz innymi eksperymentami fizycznymi. TANGO jest aktywnie rozwijane przez TANGO Consortium.
 	
-	\hspace{2em}TANGO jest rozproszonym systemem sterowania. Oznacza to, że może działać zarówno na jednej maszynie, jak i na wielu. Wykorzystuje dwa protokoły sieciowe - COBRA oraz Zeromq. Podstawowym modelem komunikacji jest model klient-serwer. Komunikacja pomiędzy klientem i serwerem może być synchroniczna, asynchroniczna (COBRA) oraz sterowana zdarzeniem (Zeromq) \cite{TangoWiki}.
+	\hspace{2em}TANGO jest rozproszonym systemem sterowania. Oznacza to, że może działać zarówno na jednej maszynie, jak i na wielu. Wykorzystuje dwa protokoły sieciowe - COBRA oraz Zeromq. Podstawowym modelem komunikacji jest model klient-serwer. Komunikacja pomiędzy klientem i serwerem może być synchroniczna, asynchroniczna (COBRA) oraz sterowana zdarzeniem (Zeromq) \cite{TangoWiki}. Schemat ideowy całości oprogramowania dostępnego w ramach projektu Tango jest pokazany na rys. \ref{fig:tango-outline}. Jest na nim zaprezentowany podział na pakiety do budowania aplikacji klienckich, programy służące do zarządzania, archiwizację, centralną bazę danych (pod sekcją TANGO HOST) oraz mnogość urządzeń skomunikowanych z resztą systemu przez dedykowane interfejsy programowej magistrali - serwery urządzeń (ang. Device Servers).
+	
+	\begin{figure}[hpt]
+		\centering
+		\includegraphics[width=1\linewidth]{Grafika/tango_outline}
+		\caption{Schemat ideowy różnych komponentów systemu sterowania Tango. Wykonanie schematu: Piotr Goryl, NCPS Solaris.}
+		\label{fig:tango-outline}
+	\end{figure}
 	
 	\hspace{2em}System TANGO jest opakowaniem (ang. wrapper) dla protokołu COBRA zapewniającym przyjazne dla użytkownika API. Dzięki takiemu podejsciu wiele detali związanych z nawiązywaniem i utrzymywaniem połączenia pomiędzy urządzeniami jest niewidoczna dla użytkownia, co pozwala na szybsze i łatwiejsze rozbudowywanie systemu sterowania.
 	
