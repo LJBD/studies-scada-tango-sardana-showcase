@@ -39,7 +39,17 @@ To, o czym jednak należy tutaj wspomnieć, to używane zwykle w synchrotronach 
 		\hspace{2em}Sardana to pakiet oprogramowania do nadzoru, kontroli i akwizycja danych w zastosowaniach naukowych. Jej celem jest zredukowanie kosztów oraz czasu potrzebnych do projektowania, rozwijania oraz utrzymywania systemów SCADA. Rozwój Sardany zapoczątkowany został przy synchrotronie ALBA, a dzisiaj jest wspierany przez wiekszą społeczność,  w skład której wchodzą liczne laboratoria oraz inne jednostki (ALBA, DESY, MaxIV, Solaris, ESRF).
 		Sardana jest bazowana na systemie TANGO i wykorzystuje bibliotekę Taurus umożliwiającą programowanie i konfigurację interfejsu użytkownika \cite{Sardana}.
 		
-		%\item \textbf{Jive}
+		\item \textbf{Narzędzia pakietu TANGO}
+		
+		\hspace{2em}Najważniejszymi narzędziami pakietu TANGO są Jive oraz Astor. Pierwsze z nich jest wykorzystywane do zarządzania urządzeniami - ich właściwościami, okresem odpytywania, nazwami, wyświetlanymi parametrami, itp. Zostało zaprezentowane na rys. \ref{fig:jive}.
+		
+		\begin{figure}[pth]
+			\centering
+			\includegraphics[width=1\linewidth]{Grafika/jive}
+			\caption{Zrzut ekranu pokazujący aplikację Jive.}
+			\label{fig:jive}
+		\end{figure}
+		
 		\item \textbf{TangoBox9} (maszyna wirtualna)
 		
 		W związku z polityką udostępniania oprogramowania na otwartych licencjach, konsorcjum Tango wypuściło gotową wirtualną maszynę, która zawiera wszystkie narzędzia pakietu Tango zainstalowane na systemie Ubuntu 14.04 64-bit. Są tam uwzględnione również wszystkie poboczne projekty, które ułatwiają korzystanie z systemu i dostarczają dodatkowych opcji potrzebnych systemowi sterowania, np. archiwizacji, logowania czy tworzenia interfejsów użytkownika. W tym systemie dostarczono w pełni funkcjonalne symulacyjne środowisko systemu sterowania synchrotronem z uwzględnieniem jednej linii badawczej. Obecne są tam również podstawowe aplikacje będące częścią bazowej paczki Tango, takie jak: Astor (służy do zarządzania serwerami urządzeń), Pogo (generator kodu serwerów), Jive czy AtkMoni (umożliwiają konfigurację i testowanie samych urządzeń).
@@ -59,5 +69,21 @@ To, o czym jednak należy tutaj wspomnieć, to używane zwykle w synchrotronach 
 	\end{enumerate}
 	\item \textbf{QtDesigner}
 	
-	\hspace{2em}Jest to narzędzie slużące do projektowania graficznego interfejsu użytkownika (GUI), zawarte w wieloplatformowym środowisku programistycznym Qt Creator.
+	\hspace{2em}Jest to narzędzie slużące do projektowania graficznego interfejsu użytkownika (GUI), zawarte w wieloplatformowym środowisku programistycznym Qt Creator. Jego wygląd jest pokazany na rys. \ref{fig:taurusdesigner}. Jak widać, można do niego zaimportować zestaw widżetów z biblioteki Taurus - wtedy komponowanie graficzne aplikacji klienckich w systemie Tango staje się bardzo proste. Podstawowe funkcje tego pakietu to:
+	\begin{enumerate}
+		\item tworzenie różnych typów GUI (głównych okien, pojedynczych paneli, okienek dialogowych, itp.),
+		\item dodawanie różnych rodzajów widżetów,
+		\item układanie graficzne wybranych elementów,
+		\item edytowanie ich właściwości,
+		\item zapis w formacie .ui, umożliwiającym późniejsze importowanie do aplikacji w języku C++ lub Python bądź bezpośrednią konwersję na kod w tym drugim języku.
+	\end{enumerate}
 \end{enumerate}
+
+\begin{figure}[ht]
+	\begin{adjustbox}{addcode={
+				\begin{minipage}{\width}}
+				{\caption{Zrzut ekranu pokazujący aplikację QtDesigner.}\label{fig:taurusdesigner}
+				\end{minipage}},rotate=90,center}
+			\includegraphics[scale=.45]{Grafika/taurus_designer}
+		\end{adjustbox}
+	\end{figure}
