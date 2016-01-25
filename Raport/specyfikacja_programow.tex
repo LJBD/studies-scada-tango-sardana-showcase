@@ -31,7 +31,14 @@ To, o czym jednak należy tutaj wspomnieć, to używane zwykle w synchrotronach 
 	\begin{enumerate}
 		\item \textbf{Taurus}
 		
-		\hspace{2em}Taurus jest platformą programistyczną dla Pythona służącą do sterowania oraz akwizycji danych w zastosowaniach naukowych oraz przemysłowych. Pozwala na szybkie i proste tworzenie interfejsów użytkownika. Jest to częśc pakietu programistycznego Sardana. Taurus posiada bogatą bibliotekę dzięki czemu stworzone GUI (ang. Graphical User Interface)  może zawierać wiele różnych komponentów takich jak wykresy, tabele, przyciski itp. Celem biblioteki Taurus jest zapewnienie przyjaznego API dla użytkownika oraz przyspieszenie procesu rozwijania aplikacji bazowanych na TANGO.
+		\hspace{2em}Taurus jest platformą programistyczną dla Pythona służącą do sterowania oraz akwizycji danych w zastosowaniach naukowych oraz przemysłowych. Pozwala na szybkie i proste tworzenie interfejsów użytkownika. Jest to częśc pakietu programistycznego Sardana. Taurus posiada bogatą bibliotekę dzięki czemu stworzone GUI (ang. Graphical User Interface)  może zawierać wiele różnych komponentów takich jak wykresy, tabele, przyciski itp. Celem biblioteki Taurus jest zapewnienie przyjaznego API dla użytkownika oraz przyspieszenie procesu rozwijania aplikacji bazowanych na TANGO. Jeden z paneli w czasie konfigurowania nowego GUI jest przedstawiony na rys. \ref{fig:taurusgui}.
+		
+		\begin{figure}[pth]
+			\centering
+			\includegraphics[width=0.6\linewidth]{Grafika/taurusgui}
+			\caption{Zrzut ekranu pokazujący tworzenie nowego GUI za pomocą TaurusGUI.}
+			\label{fig:taurusgui}
+		\end{figure}
 				
 		
 		\item \textbf{Sardana}
@@ -41,7 +48,7 @@ To, o czym jednak należy tutaj wspomnieć, to używane zwykle w synchrotronach 
 		
 		\item \textbf{Narzędzia pakietu TANGO}
 		
-		\hspace{2em}Najważniejszymi narzędziami pakietu TANGO są Jive oraz Astor. Pierwsze z nich jest wykorzystywane do zarządzania urządzeniami - ich właściwościami, okresem odpytywania, nazwami, wyświetlanymi parametrami, itp. Zostało zaprezentowane na rys. \ref{fig:jive}.
+		\hspace{2em}Najważniejszymi narzędziami pakietu TANGO są Jive oraz Astor. Pierwsze z nich jest wykorzystywane do zarządzania urządzeniami - ich właściwościami, okresem odpytywania, nazwami, wyświetlanymi parametrami, itp. Zostało zaprezentowane na rys. \ref{fig:jive}. Umożliwia również uruchomienie panelu wszystkich atrybutów i komend pojedynczego urządzenia - aplikacji ATKPanel (jest ona pokazana na rys. \ref{fig:atk}).
 		
 		\begin{figure}[pth]
 			\centering
@@ -50,9 +57,25 @@ To, o czym jednak należy tutaj wspomnieć, to używane zwykle w synchrotronach 
 			\label{fig:jive}
 		\end{figure}
 		
+		\begin{figure}[pth]
+			\centering
+			\includegraphics[width=0.5\linewidth]{Grafika/atk}
+			\caption{Zrzut ekranu pokazujący aplikację ATKPanel.}
+			\label{fig:atk}
+		\end{figure}
+		
+		\hspace{2em}Drugie - Astor - służy do zarządzania serwerami urządzeń oraz maszynami, na których owe serwery są uruchamiane. Możemy je logicznie grupować, włączać, resetować, testować czy sprawdzać logi. Wygląd panelu dla pojedynczej maszyny z serwerami jest pokazany na rys. \ref{fig:astor}.
+		
+		\begin{figure}[pth]
+			\centering
+			\includegraphics[width=1\linewidth]{Grafika/astor_panel}
+			\caption{Zrzut ekranu pokazujący panel aplikacji Astor.}
+			\label{fig:astor}
+		\end{figure}
+		
 		\item \textbf{TangoBox9} (maszyna wirtualna)
 		
-		W związku z polityką udostępniania oprogramowania na otwartych licencjach, konsorcjum Tango wypuściło gotową wirtualną maszynę, która zawiera wszystkie narzędzia pakietu Tango zainstalowane na systemie Ubuntu 14.04 64-bit. Są tam uwzględnione również wszystkie poboczne projekty, które ułatwiają korzystanie z systemu i dostarczają dodatkowych opcji potrzebnych systemowi sterowania, np. archiwizacji, logowania czy tworzenia interfejsów użytkownika. W tym systemie dostarczono w pełni funkcjonalne symulacyjne środowisko systemu sterowania synchrotronem z uwzględnieniem jednej linii badawczej. Obecne są tam również podstawowe aplikacje będące częścią bazowej paczki Tango, takie jak: Astor (służy do zarządzania serwerami urządzeń), Pogo (generator kodu serwerów), Jive czy AtkMoni (umożliwiają konfigurację i testowanie samych urządzeń).
+		W związku z polityką udostępniania oprogramowania na otwartych licencjach, konsorcjum Tango wypuściło gotową wirtualną maszynę, która zawiera wszystkie narzędzia pakietu Tango zainstalowane na systemie Ubuntu 14.04 64-bit. Są tam uwzględnione również wszystkie poboczne projekty, które ułatwiają korzystanie z systemu i dostarczają dodatkowych opcji potrzebnych systemowi sterowania, np. archiwizacji, logowania czy tworzenia interfejsów użytkownika. W tym systemie dostarczono w pełni funkcjonalne symulacyjne środowisko systemu sterowania synchrotronem z uwzględnieniem jednej linii badawczej. Obecne są tam również podstawowe aplikacje będące częścią bazowej paczki Tango, takie jak: Astor, Pogo (generator kodu serwerów), Jive czy AtkMoni (umożliwiają konfigurację i testowanie samych urządzeń).
 		
 	\end{enumerate}
 	\item \textbf{Python}
